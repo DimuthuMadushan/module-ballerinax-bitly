@@ -124,7 +124,8 @@
                                 "$ref": "#/components/schemas/Shorten"
                             }
                         }
-                    }
+                    },
+                    "description": "Long URL to shorten, with the optional domain and group to create the Bitlink in"
                 },
                 "responses": {
                     "200": {
@@ -282,7 +283,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "Details of the Bitlink to create, such as the long URL, domain, title, tags and deep links"
                 },
                 "responses": {
                     "200": {
@@ -516,7 +518,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "Bitlink fields to change, such as the title, tags, archived state, deep links and expiration"
                 },
                 "responses": {
                     "200": {
@@ -732,7 +735,8 @@
                                 "$ref": "#/components/schemas/ExpandBitlink"
                             }
                         }
-                    }
+                    },
+                    "description": "Bitlink to expand back to its long URL"
                 },
                 "operationId": "expandBitlink",
                 "responses": {
@@ -1899,7 +1903,7 @@
                 "tags": [
                     "Bitlinks"
                 ],
-                "operationId": "getMetricsForBitlinkByReferringDomains",
+                "operationId": "getBitlinkReferringDomains",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/Bitlink"
@@ -2008,7 +2012,7 @@
                 "tags": [
                     "Bitlinks"
                 ],
-                "operationId": "getMetricsForBitlinkByReferrersByDomains",
+                "operationId": "getBitlinkReferrersByDomains",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/Bitlink"
@@ -2126,7 +2130,8 @@
                                 "$ref": "#/components/schemas/AddCustomBitlink"
                             }
                         }
-                    }
+                    },
+                    "description": "Bitlink and the custom Bitlink back-half to attach to it"
                 },
                 "responses": {
                     "200": {
@@ -2253,7 +2258,8 @@
                                 "$ref": "#/components/schemas/UpdateCustomBitlink"
                             }
                         }
-                    }
+                    },
+                    "description": "Bitlink that the custom Bitlink should point to"
                 },
                 "responses": {
                     "200": {
@@ -2784,7 +2790,8 @@
                                 "$ref": "#/components/schemas/GroupUpdate"
                             }
                         }
-                    }
+                    },
+                    "description": "Group settings to change, such as its name, organization and branded short domains"
                 },
                 "responses": {
                     "200": {
@@ -3168,7 +3175,8 @@
                                 "$ref": "#/components/schemas/BulkUpdateRequest"
                             }
                         }
-                    }
+                    },
+                    "description": "Bulk action to apply to a set of Bitlinks in the group, such as archiving or editing tags"
                 },
                 "responses": {
                     "200": {
@@ -3511,7 +3519,8 @@
                                 "$ref": "#/components/schemas/GroupPreferences"
                             }
                         }
-                    }
+                    },
+                    "description": "Group preferences to change, such as the default domain for new Bitlinks"
                 },
                 "responses": {
                     "200": {
@@ -3992,7 +4001,7 @@
             "get": {
                 "summary": "Get Click Metrics for a Group by Referring Networks",
                 "description": "Returns metrics by referring networks for the specified group's links.",
-                "operationId": "GetGroupMetricsByReferringNetworks",
+                "operationId": "getGroupMetricsByReferringNetworks",
                 "tags": [
                     "Groups"
                 ],
@@ -4071,7 +4080,7 @@
             "get": {
                 "summary": "Get Click Metrics for a Group by Referrer",
                 "description": "Returns metrics by referrer for the specified group's links.",
-                "operationId": "GetGroupMetricsByReferrer",
+                "operationId": "getGroupMetricsByReferrer",
                 "tags": [
                     "Groups"
                 ],
@@ -4415,7 +4424,7 @@
         },
         "/groups/{group_guid}/exports": {
             "post": {
-                "operationId": "postCreateGroupExport",
+                "operationId": "createGroupExport",
                 "tags": [
                     "Groups"
                 ],
@@ -4434,7 +4443,8 @@
                                 "$ref": "#/components/schemas/GroupExportRequestBody"
                             }
                         }
-                    }
+                    },
+                    "description": "Export request describing what to export, the time range, filters and whether to include metrics"
                 },
                 "responses": {
                     "200": {
@@ -4899,7 +4909,8 @@
                                 "$ref": "#/components/schemas/DomainUpdate"
                             }
                         }
-                    }
+                    },
+                    "description": "Custom domain settings to change, such as redirects and HTTPS options"
                 },
                 "responses": {
                     "200": {
@@ -5056,7 +5067,8 @@
                                 "$ref": "#/components/schemas/DomainValidateBody"
                             }
                         }
-                    }
+                    },
+                    "description": "Custom domain to validate, with the organization and groups it belongs to"
                 },
                 "responses": {
                     "200": {
@@ -5258,7 +5270,8 @@
                                 "$ref": "#/components/schemas/UserUpdate"
                             }
                         }
-                    }
+                    },
+                    "description": "User profile fields to change, such as the name and default group"
                 },
                 "responses": {
                     "200": {
@@ -5505,7 +5518,8 @@
                                 "$ref": "#/components/schemas/CampaignModify"
                             }
                         }
-                    }
+                    },
+                    "description": "Details of the campaign to create, such as its name, description, group and channels"
                 },
                 "responses": {
                     "200": {
@@ -5707,7 +5721,8 @@
                                 "$ref": "#/components/schemas/CampaignModify"
                             }
                         }
-                    }
+                    },
+                    "description": "Campaign fields to change, such as its name, description and channels"
                 },
                 "responses": {
                     "200": {
@@ -5897,7 +5912,8 @@
                                 "$ref": "#/components/schemas/ChannelModify"
                             }
                         }
-                    }
+                    },
+                    "description": "Details of the channel to create, with the Bitlinks to add to it"
                 },
                 "responses": {
                     "200": {
@@ -6099,7 +6115,8 @@
                                 "$ref": "#/components/schemas/ChannelModify"
                             }
                         }
-                    }
+                    },
+                    "description": "Channel fields to change, with the Bitlinks to add to it"
                 },
                 "responses": {
                     "200": {
@@ -6216,7 +6233,8 @@
                                 "$ref": "#/components/schemas/AddChannelBitlinksRequest"
                             }
                         }
-                    }
+                    },
+                    "description": "Bitlinks to add to the channel, and the campaign they belong to"
                 },
                 "responses": {
                     "200": {
@@ -6543,7 +6561,8 @@
                                 "$ref": "#/components/schemas/PurchaseBSD"
                             }
                         }
-                    }
+                    },
+                    "description": "Branded short domain to purchase, with the accepted agreement keys and the organization that buys it"
                 },
                 "responses": {
                     "201": {
@@ -6819,7 +6838,8 @@
                                 "$ref": "#/components/schemas/WebhookCreate"
                             }
                         }
-                    }
+                    },
+                    "description": "Details of the webhook to create, such as its name, event, callback URL, organization and group"
                 },
                 "tags": [
                     "Webhooks"
@@ -7031,7 +7051,8 @@
                                 "$ref": "#/components/schemas/WebhookUpdate"
                             }
                         }
-                    }
+                    },
+                    "description": "Webhook fields to change, such as its name, event, callback URL and active state"
                 },
                 "tags": [
                     "Webhooks"
@@ -7438,7 +7459,8 @@
                                 "uri": "bit.ly/m/mysite"
                             }
                         }
-                    }
+                    },
+                    "description": "Details of the Bitly Page to create, such as the group, domain and keyword"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -7598,7 +7620,8 @@
                                 "template_guid": "T1234567890"
                             }
                         }
-                    }
+                    },
+                    "description": "Template to apply to the Bitly Page"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -7691,7 +7714,8 @@
                                 "qr_code_id": "Qabc123"
                             }
                         }
-                    }
+                    },
+                    "description": "Bitly Page fields to change, such as the URI, display name and description"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -7939,7 +7963,8 @@
                                 "default_button_shape": "rounded"
                             }
                         }
-                    }
+                    },
+                    "description": "Appearance settings for the Bitly Page, such as the theme, layout, font and header"
                 },
                 "parameters": [
                     {
@@ -8094,7 +8119,8 @@
                                 "uri": "bit.ly/m/mysite-copy"
                             }
                         }
-                    }
+                    },
+                    "description": "URI for the cloned Bitly Page"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -8369,7 +8395,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "Type of container block to add to the Bitly Page"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -8537,7 +8564,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "Content block to add to the Bitly Page, with its type and content"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -8638,7 +8666,8 @@
                                 "is_pinned": true
                             }
                         }
-                    }
+                    },
+                    "description": "Block fields to change, such as its content, appearance, schedule and pinned state"
                 },
                 "tags": [
                     "Bitly Sites"
@@ -8812,7 +8841,8 @@
                                 "video_id": "dQw4w9WgXcQ"
                             }
                         }
-                    }
+                    },
+                    "description": "YouTube video to validate before it is used as a button"
                 },
                 "responses": {
                     "200": {
@@ -8895,7 +8925,8 @@
                                 "crop": "{\"Min\": {\"X\": 0, \"Y\": 0}, \"Max\": {\"X\": 1, \"Y\": 1}}"
                             }
                         }
-                    }
+                    },
+                    "description": "Image to add to the Bitly Page, given by upload GUID or URL, with its intended use and crop"
                 },
                 "responses": {
                     "201": {
@@ -8937,7 +8968,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9031,7 +9063,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9114,7 +9147,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9197,7 +9231,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9280,7 +9315,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9363,7 +9399,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9446,7 +9483,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9529,7 +9567,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9612,7 +9651,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9695,7 +9735,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -9778,14 +9819,16 @@
                         "name": "brand_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of the brand whose Bitly Pages are included in the metrics"
                     },
                     {
                         "in": "query",
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -10220,7 +10263,7 @@
         },
         "/aggregate/sites/digital_business_card_downloads/over_time": {
             "get": {
-                "operationId": "getLaunchpadDigitalBusinessCardDownloadsOverTime",
+                "operationId": "getDigitalCardDownloadsOverTime",
                 "tags": [
                     "Bitly Sites"
                 ],
@@ -10244,7 +10287,8 @@
                         "name": "report_guid",
                         "schema": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUID of a saved report whose filters are applied to the metrics"
                     }
                 ],
                 "responses": {
@@ -10778,7 +10822,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "Details of the QR code to create, such as its destination, title, group and appearance"
                 },
                 "operationId": "createQRCodePublic",
                 "tags": [
@@ -10916,7 +10961,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "Content to encode in the static QR code image, with the optional appearance settings"
                 },
                 "operationId": "createStaticQRCodePublic",
                 "tags": [
@@ -11043,7 +11089,7 @@
         "/qr-codes/{qrcode_id}/image": {
             "get": {
                 "summary": "Retrieve a QR Code image",
-                "description": "Get the image of a given QR Code. The Accept header controls how this is returned (options are \"application/json\", \"image/svg+xml\", and \"image/png\").\nIf the Accept header is \"application/json\" the format query parameter will determine the image format inside of the json (which will be base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag).\nTo Return the QR Code image itself, set the Accept header to \"image/svg+xml\" or \"image/png\", or remove the Accept header and set the format query parameter to \u201csvg\u201d or \u201cpng\u201d (if no format is specified the default will be \u201csvg\u201d).\n",
+                "description": "Get the image of a given QR Code. The Accept header controls how this is returned (options are \"application/json\", \"image/svg+xml\", and \"image/png\").\nIf the Accept header is \"application/json\" the format query parameter will determine the image format inside of the json (which will be base64 encoded and prefixed with its mime type as would be suitable for a HTML image src tag).\nTo Return the QR Code image itself, set the Accept header to \"image/svg+xml\" or \"image/png\", or remove the Accept header and set the format query parameter to “svg” or “png” (if no format is specified the default will be “svg”).\n",
                 "operationId": "getQRCodeImagePublic",
                 "tags": [
                     "QR Codes"
@@ -11348,7 +11394,8 @@
                                 }
                             }
                         }
-                    }
+                    },
+                    "description": "QR code fields to change, such as the title, appearance, archived state, expiration and tags"
                 },
                 "responses": {
                     "200": {
@@ -11695,7 +11742,8 @@
                                 "$ref": "#/components/schemas/QRCBulkUpdateRequest"
                             }
                         }
-                    }
+                    },
+                    "description": "Bulk action to apply to a set of QR codes in the group, such as archiving or editing tags"
                 },
                 "responses": {
                     "200": {
@@ -12448,7 +12496,8 @@
                         "schema": {
                             "type": "string"
                         },
-                        "required": true
+                        "required": true,
+                        "description": "The ID of the stand alone QR code to upgrade"
                     }
                 ],
                 "responses": {
@@ -12548,7 +12597,8 @@
                         "schema": {
                             "type": "string"
                         },
-                        "required": true
+                        "required": true,
+                        "description": "The ID of the stand alone QR code whose destination changes"
                     }
                 ],
                 "requestBody": {
@@ -12559,7 +12609,8 @@
                                 "$ref": "#/components/schemas/RedirectQRCodeRequest"
                             }
                         }
-                    }
+                    },
+                    "description": "New destination URL for the QR code"
                 },
                 "responses": {
                     "200": {
@@ -14032,7 +14083,8 @@
                         "both"
                     ]
                 },
-                "example": "both"
+                "example": "both",
+                "description": "Filter Bitlinks by whether they have a custom Bitlink: on, off or both"
             },
             "FilterHasRenderCustomizations": {
                 "name": "has_render_customizations",
@@ -14156,7 +14208,8 @@
                         "bitlink",
                         "long_url"
                     ]
-                }
+                },
+                "description": "Filter QR codes by the type of destination they point to: bitlink or long_url"
             },
             "Sort": {
                 "name": "sort",
@@ -14426,7 +14479,8 @@
                 "schema": {
                     "type": "string"
                 },
-                "example": "https://example.com"
+                "example": "https://example.com",
+                "description": "Filter Bitly Pages by the URL path they are published under"
             }
         },
         "schemas": {
@@ -15160,10 +15214,12 @@
                 "type": "object",
                 "properties": {
                     "engagements": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Number of engagements recorded for the Bitlink or QR code"
                     },
                     "id": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "ID of the Bitlink or decoupled QR code the subtotal belongs to"
                     }
                 }
             },
@@ -15192,19 +15248,22 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/BitlinkBody"
-                        }
+                        },
+                        "description": "Top Bitlinks in the group, ranked by engagements"
                     },
                     "qr_codes": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/QRCodeMinimal"
-                        }
+                        },
+                        "description": "Top decoupled QR codes in the group, ranked by engagements"
                     },
                     "sorted_engagements": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/EngagementSubtotal"
-                        }
+                        },
+                        "description": "Engagement subtotals for the listed Bitlinks and QR codes, in ranking order"
                     }
                 }
             },
@@ -15345,29 +15404,34 @@
                     },
                     "domain": {
                         "type": "string",
-                        "default": "bit.ly"
+                        "default": "bit.ly",
+                        "description": "Branded short domain to create the Bitlink on"
                     },
                     "group_guid": {
                         "type": "string",
                         "description": "Always include a specific group and custom domain in your shorten calls."
                     },
                     "title": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Title of the Bitlink"
                     },
                     "tags": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "Tags to add to the Bitlink"
                     },
                     "deeplinks": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/Deeplink"
-                        }
+                        },
+                        "description": "Deep links that open the destination in a mobile app"
                     },
                     "force_new_link": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether to create a new Bitlink even if one already exists for the long URL"
                     },
                     "keyword": {
                         "type": "string",
@@ -16712,16 +16776,19 @@
                 ],
                 "properties": {
                     "organization_guid": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "GUID of the organization the domain belongs to"
                     },
                     "custom_domain": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The custom domain name to validate"
                     },
                     "group_guids": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUIDs of the groups that can use the domain"
                     },
                     "prevalidate": {
                         "type": "boolean",
@@ -16738,25 +16805,31 @@
                 ],
                 "properties": {
                     "organization_guid": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "GUID of the organization the domain belongs to"
                     },
                     "custom_domain": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The custom domain name to validate"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Registered domain part of the custom domain"
                     },
                     "subdomain": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Subdomain part of the custom domain"
                     },
                     "group_guids": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUIDs of the groups that can use the domain"
                     },
                     "prevalidate": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether to only check the domain without adding it to the organization"
                     }
                 }
             },
@@ -16765,19 +16838,24 @@
                 "description": "The settings to change on a custom domain. Send only the settings to change.",
                 "properties": {
                     "root_redirect": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "URL that the root of the domain redirects to"
                     },
                     "wildcard_redirect": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "URL that unknown back-halves on the domain redirect to"
                     },
                     "https_enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether HTTPS is enabled for the domain"
                     },
                     "hsts_enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether HTTP Strict Transport Security is enabled for the domain"
                     },
                     "upgrade_insecure_requests": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether browsers are told to upgrade insecure requests to HTTPS"
                     }
                 }
             },
@@ -16786,44 +16864,55 @@
                 "description": "information about given custom domain",
                 "properties": {
                     "custom_domain": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The custom domain name"
                     },
                     "is_active": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether the custom domain is active"
                     },
                     "group_guids": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "GUIDs of the groups that can use the custom domain"
                     },
                     "ssl_configuration_error": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Error found while configuring the SSL certificate, if any"
                     },
                     "configuration_last_check_ts": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Time of the last DNS configuration check"
                     },
                     "root_redirect": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "URL that the root of the domain redirects to"
                     },
                     "https_bitlinks": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether Bitlinks on the domain are served over HTTPS"
                     },
                     "ssl_autoconfigure_error": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether the automatic SSL configuration failed"
                     },
                     "https_enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether HTTPS is enabled for the domain"
                     },
                     "hsts_enabled": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether HTTP Strict Transport Security is enabled for the domain"
                     },
                     "created": {
                         "type": "string",
                         "description": "ISO_TIMESTAMP"
                     },
                     "wildcard_redirect": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "URL that unknown back-halves on the domain redirect to"
                     },
                     "validation_status": {
                         "type": "string",
@@ -16831,22 +16920,31 @@
                             "ok",
                             "pending",
                             "error"
-                        ]
+                        ],
+                        "description": "Result of the domain validation: ok, pending or error"
                     },
                     "validation_error": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Error found during domain validation, if any"
                     },
                     "deeplink_apps": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/MinimalDeeplinkApp"
-                        }
+                        },
+                        "description": "Deep link apps configured for the domain"
                     },
                     "upgrade_insecure_requests": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether browsers are told to upgrade insecure requests to HTTPS"
                     },
                     "ssl_cert": {
-                        "$ref": "#/components/schemas/PublicSSLCert"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/PublicSSLCert"
+                            }
+                        ],
+                        "description": "SSL certificate in use on the domain"
                     }
                 }
             },
@@ -16866,13 +16964,16 @@
                 "description": "SSL Certification",
                 "properties": {
                     "valid_end": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Time the certificate stops being valid"
                     },
                     "custom_cert": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Whether the certificate was supplied by the customer"
                     },
                     "issuer": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Authority that issued the certificate"
                     }
                 }
             },
@@ -16881,10 +16982,16 @@
                 "description": "Deep Linking object",
                 "properties": {
                     "guid": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "GUID of the deep link app"
                     },
                     "os": {
-                        "$ref": "#/components/schemas/MobileOS"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/MobileOS"
+                            }
+                        ],
+                        "description": "Mobile operating system the app runs on"
                     }
                 }
             },
@@ -17494,10 +17601,12 @@
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "description": "Only export items that carry these tags"
                     },
                     "domain": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Only export items on this domain"
                     },
                     "archived": {
                         "type": "string",
@@ -18448,19 +18557,23 @@
                 "properties": {
                     "group_guid": {
                         "type": "string",
-                        "example": "B1234567890"
+                        "example": "B1234567890",
+                        "description": "GUID of the group that owns the Bitly Page"
                     },
                     "domain": {
                         "type": "string",
-                        "example": "bit.ly"
+                        "example": "bit.ly",
+                        "description": "Branded short domain the Bitly Page is published on"
                     },
                     "keyword": {
                         "type": "string",
-                        "example": "bitlySocial"
+                        "example": "bitlySocial",
+                        "description": "Back-half keyword of the Bitly Page"
                     },
                     "uri": {
                         "type": "string",
-                        "example": "bit.ly/m/bitlySocial"
+                        "example": "bit.ly/m/bitlySocial",
+                        "description": "URI of the Bitly Page"
                     }
                 }
             },
@@ -19107,31 +19220,66 @@
                         "example": "#ff07d2"
                     },
                     "dot_pattern_type": {
-                        "$ref": "#/components/schemas/QRCodeDotPatternType"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeDotPatternType"
+                            }
+                        ],
+                        "description": "Shape of the dots that make up the QR code"
                     },
                     "corners": {
                         "$ref": "#/components/schemas/QRCodeCorners"
                     },
                     "gradient": {
-                        "$ref": "#/components/schemas/QRCodeGradient"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeGradient"
+                            }
+                        ],
+                        "description": "Gradient applied to the QR code dots"
                     },
                     "background_gradient": {
-                        "$ref": "#/components/schemas/QRCodeGradient"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeGradient"
+                            }
+                        ],
+                        "description": "Gradient applied to the QR code background"
                     },
                     "logo": {
-                        "$ref": "#/components/schemas/QRCodeLogoPublic"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeLogoPublic"
+                            }
+                        ],
+                        "description": "Logo placed in the center of the QR code"
                     },
                     "frame": {
-                        "$ref": "#/components/schemas/QRCodeFrameRequest"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeFrameRequest"
+                            }
+                        ],
+                        "description": "Frame drawn around the QR code"
                     },
                     "text": {
                         "$ref": "#/components/schemas/QRCodeText"
                     },
                     "branding": {
-                        "$ref": "#/components/schemas/QRCodeBranding"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeBranding"
+                            }
+                        ],
+                        "description": "Whether the QR code carries Bitly branding"
                     },
                     "spec_settings": {
-                        "$ref": "#/components/schemas/QRCodeSpecSettingsPublic"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeSpecSettingsPublic"
+                            }
+                        ],
+                        "description": "QR code specification settings, such as the error correction level"
                     }
                 }
             },
@@ -19152,17 +19300,32 @@
                         "description": "Identify which group to place the QR Code."
                     },
                     "render_customizations": {
-                        "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+                            }
+                        ],
+                        "description": "Options that control how the QR code looks"
                     },
                     "archived": {
                         "description": "A boolean representing if the QR code should be archived (hidden from the UI) upon creation",
                         "type": "boolean"
                     },
                     "destination": {
-                        "$ref": "#/components/schemas/QRCodeDestination"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeDestination"
+                            }
+                        ],
+                        "description": "Where the QR code sends people when it is scanned"
                     },
                     "gs1": {
-                        "$ref": "#/components/schemas/GS1Metadata"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/GS1Metadata"
+                            }
+                        ],
+                        "description": "GS1 Digital Link metadata for the QR code"
                     },
                     "expiration_at": {
                         "type": "string",
@@ -19184,7 +19347,8 @@
                     },
                     "domain": {
                         "type": "string",
-                        "default": "bit.ly"
+                        "default": "bit.ly",
+                        "description": "Branded short domain to create the QR code's Bitlink on"
                     }
                 },
                 "example": {
@@ -19293,7 +19457,12 @@
                         "example": "Ba1bc23dE4F"
                     },
                     "render_customizations": {
-                        "$ref": "#/components/schemas/QRCodeCustomizationsStaticPublic"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeCustomizationsStaticPublic"
+                            }
+                        ],
+                        "description": "Options that control how the static QR code looks"
                     }
                 },
                 "example": {
@@ -19321,16 +19490,31 @@
                         "example": "#ff07d2"
                     },
                     "dot_pattern_type": {
-                        "$ref": "#/components/schemas/QRCodeDotPatternType"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeDotPatternType"
+                            }
+                        ],
+                        "description": "Shape of the dots that make up the QR code"
                     },
                     "corners": {
                         "$ref": "#/components/schemas/QRCodeCorners"
                     },
                     "branding": {
-                        "$ref": "#/components/schemas/QRCodeBranding"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeBranding"
+                            }
+                        ],
+                        "description": "Whether the QR code carries Bitly branding"
                     },
                     "spec_settings": {
-                        "$ref": "#/components/schemas/QRCodeSpecSettingsPublic"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeSpecSettingsPublic"
+                            }
+                        ],
+                        "description": "QR code specification settings, such as the error correction level"
                     }
                 }
             },
@@ -19350,10 +19534,16 @@
                 "type": "object",
                 "properties": {
                     "title": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "New title of the QR code"
                     },
                     "render_customizations": {
-                        "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeCustomizationsPublic"
+                            }
+                        ],
+                        "description": "Options that control how the QR code looks"
                     },
                     "archived": {
                         "description": "A boolean representing if the QR code has been archived",
@@ -19479,7 +19669,8 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/QRCodeMinimal"
-                        }
+                        },
+                        "description": "QR codes on this page of results"
                     },
                     "pagination": {
                         "$ref": "#/components/schemas/QRPagination"
@@ -19494,13 +19685,15 @@
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/DeletedQRCode"
-                        }
+                        },
+                        "description": "QR codes that were deleted"
                     },
                     "links_deleted": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/DeletedLink"
-                        }
+                        },
+                        "description": "Bitlinks that were deleted along with the QR codes"
                     }
                 }
             },
@@ -19513,7 +19706,8 @@
                 "properties": {
                     "long_url": {
                         "type": "string",
-                        "example": "https://www.google.com"
+                        "example": "https://www.google.com",
+                        "description": "New destination URL the QR code redirects to"
                     }
                 }
             },
@@ -19522,13 +19716,28 @@
                 "type": "object",
                 "properties": {
                     "corner_1": {
-                        "$ref": "#/components/schemas/QRCodeCorner"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeCorner"
+                            }
+                        ],
+                        "description": "Appearance of the top left corner"
                     },
                     "corner_2": {
-                        "$ref": "#/components/schemas/QRCodeCorner"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeCorner"
+                            }
+                        ],
+                        "description": "Appearance of the top right corner"
                     },
                     "corner_3": {
-                        "$ref": "#/components/schemas/QRCodeCorner"
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/QRCodeCorner"
+                            }
+                        ],
+                        "description": "Appearance of the bottom right corner"
                     }
                 }
             },
