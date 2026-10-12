@@ -1,6 +1,6 @@
 # Group link analytics
 
-This example fetches the most recent Bitlinks of a group and reports the countries that drive the most clicks for each of them. It shows how to page through a group's links and call a metrics operation per link.
+This example fetches up to `maxLinks` Bitlinks of a group and reports the countries that drive the most clicks for each of them. It shows how to list a group's links and call a metrics operation per link.
 
 ## Prerequisites
 

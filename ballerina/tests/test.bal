@@ -67,25 +67,29 @@ isolated function testDeleteBitlink() returns error? {
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 isolated function testExpandBitlink() returns error? {
-    ExpandedBitlink response = check bitly->expandBitlink({bitlinkId: "bit.ly/3xYz12A"});
+    ShortenBitlinkBody created = check bitly->createBitlink({longUrl: LONG_URL, groupGuid});
+    ExpandedBitlink response = check bitly->expandBitlink({bitlinkId: created?.id ?: ""});
     test:assertTrue(response?.longUrl is string);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 isolated function testGetClicksForBitlink() returns error? {
-    Clicks response = check bitly->getClicksForBitlink("bit.ly/3xYz12A", unit = "day");
+    ShortenBitlinkBody created = check bitly->createBitlink({longUrl: LONG_URL, groupGuid});
+    Clicks response = check bitly->getClicksForBitlink(created?.id ?: "", unit = "day");
     test:assertTrue(response?.linkClicks is LinkClicks[]);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 isolated function testGetClicksSummaryForBitlink() returns error? {
-    ClicksSummary response = check bitly->getClicksSummaryForBitlink("bit.ly/3xYz12A", unit = "day");
+    ShortenBitlinkBody created = check bitly->createBitlink({longUrl: LONG_URL, groupGuid});
+    ClicksSummary response = check bitly->getClicksSummaryForBitlink(created?.id ?: "", unit = "day");
     test:assertTrue(response?.totalClicks is int);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 isolated function testGetMetricsForBitlinkByCountries() returns error? {
-    ClickMetrics response = check bitly->getMetricsForBitlinkByCountries("bit.ly/3xYz12A", unit = "day");
+    ShortenBitlinkBody created = check bitly->createBitlink({longUrl: LONG_URL, groupGuid});
+    ClickMetrics response = check bitly->getMetricsForBitlinkByCountries(created?.id ?: "", unit = "day");
     test:assertTrue(response?.metrics is ClickMetric[]);
 }
 

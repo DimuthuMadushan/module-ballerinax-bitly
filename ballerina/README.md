@@ -20,7 +20,7 @@ To use the connector you need a Bitly account and an access token.
 
 2. Open your account settings and go to the **API** page under the developer settings.
 
-3. Enter your password and generate an OAuth access token, then copy it.
+3. Enter your password and generate a generic access token, then copy it.
 
 4. Note the GUID of the group you want to work with. You can read it from the `getGroups` operation or from the group page in your account.
 
